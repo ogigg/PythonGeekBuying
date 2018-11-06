@@ -18,12 +18,12 @@ for email in emails:
         s.get('https://www.geekbuying.com/main/signin')
 
         auth = {
-                'EmailAddress': email #'geek13@usunkonto.eu'
+                'EmailAddress': email
                 , 'PassWord': password
                 , 'VerificationCode': ''
                 }
         s.post('https://www.geekbuying.com/Main/AjaxSignIn', data=auth)
-        promo = {'day': '6'}
+        promo = {'day': '7'}
         a=s.post('http://promotion.geekbuying.com/LuckyDraw/AddSigned', data=promo, timeout=1)
         print(email)
         print (a.content)
@@ -37,17 +37,3 @@ for email in emails:
         device.shell("svc data enable")
         time.sleep(6)
 file.close() 
-# payload= {
-#         'EmailAddress': 'geek37@ogig.ct8.pl' 
-#         , 'PassWord': "oskarek123"
-#         , 'VerificationCode': ''}
-# headers = {'Content-type': 'application/json; charset=utf-8', 'Accept': 'text/json'}
-# a=s.post("https://www.geekbuying.com/Main/AjaxSignIn?EmailAddress=geek37%40ogig.ct8.pl&PassWord=oskarek123&VerificationCode=",headers=headers)
-# print (a.content)
-
-# promo = {
-#         'day': '1'}
-# p = s.post('http://promotion.geekbuying.com/LuckyDraw/AddSigned?day=1', timeout=5)
-# print(p.content)
-
-#nie dzialczy
